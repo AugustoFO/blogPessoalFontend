@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        zeus: '#2B2120', // Nome personalizado para sua cor
+      }
+    },
   },
   plugins: [],
 }
