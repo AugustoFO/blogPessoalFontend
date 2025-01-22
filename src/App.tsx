@@ -7,6 +7,8 @@ import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import Cadastro from './pages/cadastro/Cadastro'
 import ListaTemas from './components/temas/listatemas/ListaTemas'
+import FormTema from './components/temas/formtema/FormTema'
+import DeletarTema from './components/temas/deletartema/DeletarTema'
 import { AuthContext, AuthProvider } from './contexts/AuthContext'
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
                 <Route path="/cadastro" element={<Cadastro />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/temas" element={<ListaTemas />} />
+                <Route path="/cadastrartema" element={<FormTema />} />
+                <Route path="/editartema/:id" element={<FormTema />} />
+                <Route path="/deletartema/:id" element={<DeletarTema />} />
               </Routes>
             </main>
             <Footer />
