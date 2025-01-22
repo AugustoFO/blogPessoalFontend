@@ -6,9 +6,9 @@ function Footer() {
 
     return (
         <>
-            <div className="flex justify-center bg-zeus text-white">
+            <div className="flex justify-center bg-ebony text-white flex-grow w-4/5 mx-auto shadow-lg mt-5 rounded-t-lg">
                 <div className="container flex flex-col items-center py-4">
-                    <p className='text-xl font-bold'>
+                    <p className='text-xl'>
                         Blog Pessoal Generation | Copyright: {data}
                     </p>
                     <p className='text-lg'>Acesse nossas redes sociais</p>

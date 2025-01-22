@@ -7,7 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        zeus: '#2B2120', // Nome personalizado para sua cor
+        zeus: '#2B2120',
+        brown_red: '#922F0F',
+        rose_gold: '#E1C8C8',
+        ebony: '#282142'
       }
     },
   },
