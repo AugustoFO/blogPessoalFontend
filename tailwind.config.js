@@ -10,7 +10,7 @@ export default {
         zeus: '#2B2120',
         brown_red: '#922F0F',
         rose_gold: '#E1C8C8',
-        ebony: '#282142'
+        ebony: '#282142',
       }
     },
   },
