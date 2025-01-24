@@ -1,3 +1,4 @@
+import './Home.css';
 import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens";
 import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
 
@@ -23,12 +24,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className="flex justify-center ">
-                        <img
-                            src="https://i.imgur.com/fyfri1v.png"
-                            alt="Imagem Página Home"
-                            className='w-2/3'
-                        />
+                    <div className="fundoHome hidden lg:block">
                     </div>
                 </div>
             </div>
