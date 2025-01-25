@@ -1,4 +1,3 @@
-import './App.css'
 import './index.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Footer from './components/footer/Footer'
@@ -12,12 +11,18 @@ import DeletarTema from './components/temas/deletartema/DeletarTema'
 import ListaPostagens from './components/postagens/listapostagens/ListaPostagens'
 import FormPostagem from './components/postagens/formpostagens/FormPostagem'
 import DeletarPostagem from './components/postagens/deletarpostagem/DeletarPostagem'
-import { AuthContext, AuthProvider } from './contexts/AuthContext'
+import Perfil from './pages/perfil/Perfil'
+import { AuthProvider } from './contexts/AuthContext'
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <ToastContainer />
         <BrowserRouter>
           <div className="flex flex-col min-h-screen overflow-hidden">
             <Navbar />
@@ -35,6 +40,7 @@ function App() {
                 <Route path="/cadastrarpostagem" element={<FormPostagem />} />
                 <Route path="/editarpostagem/:id" element={<FormPostagem />} />
                 <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
+                <Route path="/perfil" element={<Perfil />} />
               </Routes>
             </main>
             <Footer />

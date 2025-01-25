@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
 import { AuthContext } from '../../contexts/AuthContext';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { RotatingLines } from 'react-loader-spinner';
+import imgLogin from '../../assets/svgs/cat.svg'
 
 function Login() {
 
@@ -35,8 +35,8 @@ function Login() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center py-24 ">
-                <form className="flex justify-center items-center flex-col w-1/2 gap-4"
+            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center py-24 min-h-screen">
+                <form className="flex lg:justify-self-end items-center flex-col w-1/2 gap-4"
                     onSubmit={login}>
                     <h2 className="text-slate-900 text-4xl ">Entrar</h2>
                     <div className="flex flex-col w-full">
@@ -87,7 +87,9 @@ function Login() {
                         </Link>
                     </p>
                 </form>
-                <div className="fundoLogin hidden lg:block"></div>
+                <div className="fundoLogin hidden lg:block justify-center">
+                    <img src={imgLogin} className="hidden lg:block min-h-[50vh] w-2/3 " alt="Imagem ilustrativa da página de login" />
+                </div>
             </div>
         </>
     );

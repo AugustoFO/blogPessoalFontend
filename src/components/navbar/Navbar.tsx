@@ -1,22 +1,26 @@
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
     const navigate = useNavigate();
 
-    const { handleLogout } = useContext(AuthContext)
+    const { usuario, handleLogout } = useContext(AuthContext)
 
     function logout() {
 
         handleLogout()
-        alert('O Usuário foi desconectado com sucesso!')
+        ToastAlerta('O Usuário foi desconectado com sucesso!', 'info')
         navigate('/')
     }
 
-    return (
-        <>
+    let component: ReactNode
+
+    if (usuario?.token) {
+
+        component = (
             <div className='bg-ebony text-white flex justify-center px-4 rounded-lg w-4/5 mx-auto shadow-lg mt-5'>
 
                 <div className="container flex justify-between text-lg p-4 text-sm sm:text-base md:text-lg lg:text-xl">
@@ -34,7 +38,7 @@ function Navbar() {
                                 <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
                             </li>
                             <li>
-                                <Link to='' /*onClick={logout}*/ className='hover:underline'>Perfil</Link>
+                                <Link to='/perfil' className='hover:underline'>Perfil</Link>
                             </li>
                             <li>
                                 <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
@@ -43,6 +47,12 @@ function Navbar() {
                     </div>
                 </div>
             </div>
+        )
+    }
+
+    return (
+        <>
+            {component}
         </>
     )
 }

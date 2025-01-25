@@ -2,8 +2,9 @@ import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
-import './Cadastro.css'
+import imgCadastro from '../../assets/svgs/posts.svg'
 import { RotatingLines } from 'react-loader-spinner'
+import { ToastAlerta } from '../../utils/ToastAlerta'
 
 function Cadastro() {
 
@@ -52,12 +53,12 @@ function Cadastro() {
 
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-                alert('Usuário cadastrado com sucesso!')
+                ToastAlerta('Usuário cadastrado com sucesso!', 'sucesso')
             } catch (error) {
-                alert('Erro ao cadastrar o usuário!')
+                ToastAlerta('Erro ao cadastrar o usuário!', 'erro')
             }
         } else {
-            alert('Dados do usuário inconsistentes! Verifique as informações do cadastro.')
+            ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.', 'info')
             setUsuario({ ...usuario, senha: '' })
             setConfirmaSenha('')
         }
@@ -67,11 +68,13 @@ function Cadastro() {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center pt-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center pt-16 min-h-screen">
 
-                <div className="fundoCadastro hidden lg:block"></div>
+                <div className="fundoLogin hidden lg:block justify-center">
+                    <img src={imgCadastro} className="hidden lg:block min-h-[50vh] w-2/3 lg:justify-self-end" alt="Imagem ilustrativa da página de login" />
+                </div>
 
-                <form className='flex justify-center items-center flex-col w-1/2 gap-2'
+                <form className='flex justify-center items-center flex-col w-1/2 gap-2 lg:justify-self-start'
                     onSubmit={cadastrarNovoUsuario}>
                     <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
                     <div className="flex flex-col w-full">
