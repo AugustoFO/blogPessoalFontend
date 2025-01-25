@@ -70,8 +70,8 @@ function Cadastro() {
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center pt-16 min-h-screen">
 
-                <div className="fundoLogin hidden lg:block justify-center">
-                    <img src={imgCadastro} className="hidden lg:block min-h-[50vh] w-2/3 lg:justify-self-end" alt="Imagem ilustrativa da página de login" />
+                <div className="hidden lg:block justify-center">
+                    <img src={imgCadastro} className="hidden lg:block min-h-[50vh] w-2/3 lg:justify-self-end" alt="Imagem ilustrativa da página de cadastro" />
                 </div>
 
                 <form className='flex justify-center items-center flex-col w-1/2 gap-2 lg:justify-self-start'
