@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://blogpessoalspring-wrr4.onrender.com/'
+    baseURL: import.meta.env.BASE_URL
 })
 
 export const consultar = async (url: string, setDados: Function) => {
